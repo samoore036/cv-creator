@@ -48,6 +48,10 @@ body {
     justify-content: space-between;
     margin-top: -0.5rem;
   }
+
+  .personal-details-div *:not(:last-child) {
+    border-right: 2px solid black;
+  }
 }
 
 .main-content {
@@ -180,7 +184,6 @@ h4 {
 
 .personal-details-div *:not(:last-child) {
   padding-right: 0.5vw;
-  border-right: 2px solid black;
 }
 
 .skills-div {
