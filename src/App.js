@@ -13,6 +13,7 @@ import DefaultForm from './components/form components/utilities/DefaultForm';
 function App() {
   const [hasExperienceInfo, setHasExperienceInfo] = React.useState(false);
   const [hasEducationInfo, setHasEducationInfo] = React.useState(false);
+  const [hasSkillsInfo, setHasSkillsInfo] = React.useState(false);
 
   const [formData, setFormData] = React.useState(DefaultForm);
 
@@ -143,6 +144,7 @@ function App() {
   }
 
   function handleSkillsChange(e) {
+    setHasSkillsInfo(true);
     const { value, id } = e.target;
     setFormData(prevData => {
       let newSkills = {...prevData.skills};
@@ -177,6 +179,7 @@ function App() {
   }
 
   function handleReset() {
+    setHasSkillsInfo(false);
     setHasExperienceInfo(false);
     setHasEducationInfo(false);
     setFormData(DefaultForm);
@@ -206,7 +209,12 @@ function App() {
           loadExample={loadExample}
           handleReset={handleReset}
         />
-        <Cv hasExperienceInfo={hasExperienceInfo} hasEducationInfo={hasEducationInfo} data={formData}/>
+        <Cv 
+          hasSkillsInfo={hasSkillsInfo}
+          hasExperienceInfo={hasExperienceInfo} 
+          hasEducationInfo={hasEducationInfo} 
+          data={formData}
+        />
       </div>
       <Footer />
     </div>

@@ -33,15 +33,18 @@ export default function Cv(props) {
         <div className='cv-holder'>
             <div id='to-print' className='cv-div'>
                 <PersonalInformation {...personalInformation}/>
-                <Skills data={skills}/>
-                <div className='cv-section'>
-                    {props.hasExperienceInfo && <h3>Experience</h3>}
+                
+                {props.hasSkillsInfo && <Skills data={skills}/>}
+
+                {props.hasExperienceInfo && <div className='cv-section'>
+                    <h3>Experience</h3>
                     {experienceElements}
-                </div>
-                <div className='cv-section'>
-                    {props.hasEducationInfo && <h3>Education</h3>}
+                </div>}
+
+                {props.hasEducationInfo && <div className='cv-section'>
+                    <h3>Education</h3>
                     {educationElements}
-                </div>
+                </div>}
             </div>
         </div>
     )
